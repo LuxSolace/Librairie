@@ -25,6 +25,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .button-base, #add-button, table button, table tbody .delete, header .header__button button {
@@ -70,6 +71,7 @@ main {
   padding: 20px;
   border-radius: 25px;
   font-family: "Montserrat", sans-serif;
+  box-shadow: 0px 0px 58px -25px rgba(75, 75, 75, 0.25);
 }
 
 table {
@@ -150,5 +152,71 @@ table button.--to-read {
 }
 
 .modal {
-  display: none;
+  width: 600px;
+  min-height: 280px;
+  background-color: #F5F5F5;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 58px -25px rgba(75, 75, 75, 0.25);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100vh);
+}
+.modal h2 {
+  color: #226D68;
+  font-family: "FuturaLT", sans-serif;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+.modal hr {
+  border-color: #E7E7E7;
+  opacity: 0.3;
+  margin-bottom: 15px;
+}
+.modal form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+.modal form .form__group {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+.modal form label {
+  font-family: "Montserrat", sans-serif;
+  color: #D6955B;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.modal form input, .modal form select {
+  font-family: "Montserrat", sans-serif;
+  color: #333333;
+  border: none;
+  border-radius: 40px;
+  padding: 2px 8px;
+}
+.modal form input::-moz-placeholder {
+  color: #333333;
+  opacity: 0.8;
+  font-family: "Montserrat", sans-serif;
+}
+.modal form input:-ms-input-placeholder {
+  color: #333333;
+  opacity: 0.8;
+  font-family: "Montserrat", sans-serif;
+}
+.modal form input::placeholder {
+  color: #333333;
+  opacity: 0.8;
+  font-family: "Montserrat", sans-serif;
+}
+.modal form input:focus, .modal form select:focus {
+  border: 1px solid #D6955B;
+}
+
+.modal.visible {
+  transform: translate(-50%, -50%);
 }/*# sourceMappingURL=style.css.map */
