@@ -35,36 +35,38 @@ $shadow: 0px 0px 58px -25px rgba(75, 75, 75, 0.25);
 
 body {
     background-color: $color-bg;
-    display: flex;
     height: 100vh;
     width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.container {
-    margin: auto;
-}
-
-.action-button {
+.button-base {
     border: none;
-    border-radius: 50%;
+    display: flex;
     align-items: center;
     justify-content: center;
+    font-family: $font-primary;
     cursor: pointer;
 }
 
 header {
 
-    h1 {
+    .header__disclaimer {    
+        
+        h1 {
         color: $color-secondary;
         font-family: $font-secondary;
         font-size: $size-font-title;
-    }
+        }
 
-    p {
-        color: $color-primary;
-        font-family: $font-primary;
-        font-size: $size-font-main;
-        margin-bottom: 20px;
+        p {
+            color: $color-primary;
+            font-family: $font-primary;
+            font-size: $size-font-main;
+            margin-bottom: 20px;
+        }
     }
 
     .header__button {
@@ -74,11 +76,12 @@ header {
         margin-bottom: 40px;
 
         button {
+            @extend .button-base;
             height: 35px;
             width: 35px;
-            display: inline-flex;
             background-color: $color-toned-secondary;
-        }
+            border-radius: 50%;
+            }
 
         button#light-mode-toggle {
             background-color: $color-contrast;
@@ -124,12 +127,36 @@ table {
         td {
             border-left: $color-toned-primary solid 1px;
             padding: 10px;
-            vertical-align: top;
         }
 
         td:first-child {
             border: none;
             font-weight: 500;
+        }
+
+        td:last-child {
+            position: relative;
+        }
+
+        .delete {
+            @extend .button-base;
+            width: 20px;
+            height: 20px;
+            background-color: $color-danger;
+            position: absolute;
+            top: 50%;
+            transform:translateY(-50%);
+            right: 10%;
+            border-radius: 50%;
+            display: none;
+        
+            svg {
+                stroke: #FFFFFF;
+            }
+        }
+
+        tr:hover .delete {
+            display: flex;
         }
 
         td:nth-child(1),
@@ -145,15 +172,11 @@ table {
     }
     
     button {
-        border: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @extend .button-base;
         padding: 2px 10px;
         border-radius: 40px;
         color: $color-main;
         font-family: $font-primary;
-        cursor: pointer;
     }
 
     button.--read {
@@ -166,55 +189,20 @@ table {
 
 }
 
-tr {
-    position: relative;
-    }
-
-.modal {
-    display: none;
-}
-
-tr td:last-child {
-    position: relative;
-} 
-
-.delete {
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $color-danger;
-    position: absolute;
-    top: 50%;
-    transform:translateY(-50%);
-    right: 10%;
-    border-radius: 50%;
-    display: none;
-    cursor: pointer;
-
-    svg {
-        stroke: #FFFFFF;
-    }
-}
-
-tr:hover .delete {
-    display: flex;
-}
-
 #add-button {
+    @extend .button-base;
     background-color: $color-secondary;
-    font-family: $font-primary;
-    display: flex;
-    align-items: center;
     gap: 5px;
     padding: 5px 15px 5px 10px;
     margin-top: 20px;
-    border: none;
     border-radius: 20px;
     color: white;
 
     svg {
         stroke: white;
     } 
+}
+
+.modal {
+    display: none;
 }
