@@ -191,7 +191,7 @@ table {
 
 }
 
-#add-button {
+.add-button {
     @extend .button-base;
     background-color: $color-secondary;
     gap: 5px;
@@ -205,7 +205,7 @@ table {
     } 
 }
 
-.modal {
+#modal {
     width: 600px;
     min-height: 280px;
     background-color: $modal-bg;
@@ -267,9 +267,14 @@ table {
         input:focus, select:focus {
             border: 1px solid $color-primary;
         }
+
+        button {
+            @extend .button-base, .add-button;
+            margin-top: 10px;
+        }
     }
 }
 
-.modal.visible {
+#modal.visible {
         transform: translate(-50%, -50%);
 }

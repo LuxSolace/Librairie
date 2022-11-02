@@ -36,7 +36,7 @@
     
     </header>
     
-    <aside class="modal">
+    <aside id="modal">
     
             <h2>Ajouter un livre</h2>
             <hr>
@@ -66,6 +66,11 @@
                     </select>
                 </div>
     
+                <button type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    Envoyer
+                </button>
+
             </form>
     
     </aside>
@@ -118,7 +123,7 @@
     
     </main>
 
-    <button type="button" id="add-button" class="action-button">
+    <button type="button" class="add-button" class="action-button" onclick="renderModal()">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> Ajouter un livre 
     </button>
 
