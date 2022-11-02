@@ -1,6 +1,176 @@
+@font-face {
+  font-family: FuturaLT;
+  src: url(./fonts/FuturaLT-Heavy.woff);
+  font-weight: bold;
+  font-style: normal;
+}
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* color variables */
+/* table container & button text */
+/* table border & add button bg */
+/* add button icon bg & github icon */
+/* light mode toggle & main text color */
+/* fonts variables */
+/* size variables */
+/* misc variables */
+body {
+  background-color: #EDEDED;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  margin: auto;
+}
+
+.action-button {
+  border: none;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+header h1 {
+  color: #226D68;
+  font-family: "FuturaLT", sans-serif;
+  font-size: 48px;
+}
+header p {
+  color: #D6955B;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+header .header__button {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+header .header__button button {
+  height: 35px;
+  width: 35px;
+  display: inline-flex;
+  background-color: #D9D9D9;
+}
+header .header__button button#light-mode-toggle {
+  background-color: #333333;
+}
+header .header__button button#light-mode-toggle svg {
+  stroke: #D9D9D9;
+}
+
+main {
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 25px;
+  font-family: "Montserrat", sans-serif;
+}
+
+table {
+  text-align: left;
+  border-collapse: collapse;
+}
+table thead tr {
+  border-bottom: #E7E7E7 solid 1px;
+}
+table thead tr th {
+  color: #D6955B;
+  font-weight: 700;
+  border-left: #E7E7E7 solid 1px;
+  padding: 10px;
+}
+table thead tr th:first-child {
+  border: none;
+}
+table tbody td {
+  border-left: #E7E7E7 solid 1px;
+  padding: 10px;
+  vertical-align: top;
+}
+table tbody td:first-child {
+  border: none;
+  font-weight: 500;
+}
+table tbody td:nth-child(1),
+table tbody td:nth-child(2) {
+  min-width: 330px;
+}
+table tbody td:nth-child(3),
+table tbody td:nth-child(4) {
+  min-width: 130px;
+}
+table button {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 40px;
+  color: #FFFFFF;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+table button.--read {
+  background-color: #226D68;
+}
+table button.--to-read {
+  background-color: #D6955B;
+}
+
+tr {
+  position: relative;
+}
+
+.modal {
+  display: none;
+}
+
+tr td:last-child {
+  position: relative;
+}
+
+.delete {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #BB3434;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10%;
+  border-radius: 50%;
+  display: none;
+  cursor: pointer;
+}
+.delete svg {
+  stroke: #FFFFFF;
+}
+
+tr:hover .delete {
+  display: flex;
+}
+
+#add-button {
+  background-color: #226D68;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 15px 5px 10px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+}
+#add-button svg {
+  stroke: white;
+}
