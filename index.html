@@ -5,97 +5,120 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+<div class="container">
 
-    <div class="header__disclaimer">
-        <h1><em>Bibliothèque</em> par Lorem.</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    </div>
+    <header>
     
-    <div class="header__button">
-        <button type="button"></button>
-        <button type="button"></button>
-    </div>
-
-</header>
-
-<aside class="modal">
+        <div class="header__disclaimer">
+            <h1>Lorem.</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
     
-        <h2>Ajouter un livre</h2>
-        <hr>
+        <div class="header__button">
     
-        <form>
+            <button type="button" class="action-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </button>
     
-            <div class="form__group">
-                <label for="form__titre">Titre du livre</label>
-                <input type="text" id="form__titre" placeholder="Notre-Dame de Paris" name="titre">
-            </div>
+            <button type="button" id="light-mode-toggle" class="action-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
     
-            <div class="form__group">
-                <label for="form__auteur">Auteur du livre</label>
-                <input type="text" id="form__auteur" placeholder="Victor Hugo" name="auteur">
-            </div>
+        </div>
     
-            <div class="form__group">
-                <label for="form__pages">Nombre de pages</label>
-                <input type="number" id="form__pages" placeholder="940" name="pages">
-            </div>
+    </header>
     
-            <div class="form__group">
-                <label for="form__statut">Cochez si vous avez déjà lu ce livre</label>
-                <input type="checkbox" id="form__statut" name="statut">
-            </div>
+    <aside class="modal">
     
-        </form>
+            <h2>Ajouter un livre</h2>
+            <hr>
     
-</aside>
+            <form>
+    
+                <div class="form__group">
+                    <label for="form__titre">Titre du livre</label>
+                    <input type="text" id="form__titre" placeholder="Notre-Dame de Paris" name="titre">
+                </div>
+    
+                <div class="form__group">
+                    <label for="form__auteur">Auteur du livre</label>
+                    <input type="text" id="form__auteur" placeholder="Victor Hugo" name="auteur">
+                </div>
+    
+                <div class="form__group">
+                    <label for="form__pages">Nombre de pages</label>
+                    <input type="number" id="form__pages" placeholder="940" name="pages">
+                </div>
+    
+                <div class="form__group">
+                    <label for="form__statut">Cochez si vous avez déjà lu ce livre</label>
+                    <input type="checkbox" id="form__statut" name="statut">
+                </div>
+    
+            </form>
+    
+    </aside>
+    
+    <main class="table-container">
+    
+        <table>
+    
+            <thead>
+    
+                <tr>
+                    <th>Titre</th>
+                    <th>Auteur</th>
+                    <th>Longueur</th>
+                    <th>Statut</th>
+                </tr>
+    
+            </thead>
+    
+            <tbody>
+    
+                <tr>
+                    <td>Le château de Hurle</td>
+                    <td>Diana Wynne Jones</td>
+                    <td>432</td>
+                    <td>
+                        <button type="button" class="--read">À lire</button>
+                        <div class="delete">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </div>
+                    </td>
+                    
+                </tr>
+    
+                <tr>
+                    <td>Intelligence Artificielles</td>
+                    <td>Fibretigre, Arnold Zephir, Héloïse Chochois</td>
+                    <td>192</td>
+                    <td>
+                        <button type="button" class="--to-read">À lire</button>
 
+                        <div class="delete">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </div>
+                    </td>
+                </tr>
+    
+            </tbody>
+    
+        </table>
+    
+    </main>
 
-<main class="table-container">
+    <button type="button" id="add-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> Ajouter un livre </button>
 
-    <table>
-
-        <thead>
-
-            <tr>
-                <th>Titre</th>
-                <th>Auteur</th>
-                <th>Longueur</th>
-                <th>Statut</th>
-            </tr>
-
-        </thead>
-
-        <tbody>
-
-            <tr>
-                <td>Le château de Hurle</td>
-                <td>Diana Wynne Jones</td>
-                <td>432</td>
-                <td><button type="button">À lire</button></td>
-            </tr>
-
-            <tr>
-                <td>Intelligence Artificielles</td>
-                <td>Fibretigre, Arnold Zephir, Héloïse Chochois</td>
-                <td>192</td>
-                <td><button type="button">À lire</button></td>
-            </tr>
-
-        </tbody>
-
-    </table>
-
-</main>
-
-<footer>
-    <p>Web-Lux</p>
-</footer>
+</div>
 
 </body>
 
