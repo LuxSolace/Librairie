@@ -45,12 +45,12 @@
     
                 <div class="form__group">
                     <label for="form__titre">Titre du livre</label>
-                    <input type="text" id="form__titre" placeholder="Notre-Dame de Paris" name="titre">
+                    <input type="text" id="form__titre" placeholder="Notre-Dame de Paris" name="titre" required>
                 </div>
     
                 <div class="form__group">
                     <label for="form__auteur">Auteur du livre</label>
-                    <input type="text" id="form__auteur" placeholder="Victor Hugo" name="auteur">
+                    <input type="text" id="form__auteur" placeholder="Victor Hugo" name="auteur" required>
                 </div>
     
                 <div class="form__group">
@@ -58,9 +58,12 @@
                     <input type="number" id="form__pages" placeholder="940" name="pages">
                 </div>
     
-                <div class="form__group">
-                    <label for="form__statut">Cochez si vous avez déjà lu ce livre</label>
-                    <input type="checkbox" id="form__statut" name="statut">
+                <div class="form__group" required>
+                    <label for="form__statut">Statut</label>
+                    <select id="form__statut" name="statut">
+                        <option value="to-read">À lire</option>
+                        <option value="read">Déjà lu</option>
+                    </select>
                 </div>
     
             </form>
