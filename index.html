@@ -41,32 +41,32 @@
             <h2>Ajouter un livre</h2>
             <hr>
     
-            <form>
+            <form id="form">
     
                 <div class="form__group">
                     <label for="form__titre">Titre du livre</label>
-                    <input type="text" id="form__titre" placeholder="Notre-Dame de Paris" name="titre" required>
+                    <input type="text" id="form__titre" placeholder="Notre-Dame de Paris" name="titre"  class="form__input"required>
                 </div>
     
                 <div class="form__group">
                     <label for="form__auteur">Auteur du livre</label>
-                    <input type="text" id="form__auteur" placeholder="Victor Hugo" name="auteur" required>
+                    <input type="text" id="form__auteur" placeholder="Victor Hugo" name="auteur"  class="form__input"required>
                 </div>
     
                 <div class="form__group">
                     <label for="form__pages">Nombre de pages</label>
-                    <input type="number" id="form__pages" placeholder="940" name="pages">
+                    <input type="number" id="form__pages" placeholder="940" name="pages" class="form__input">
                 </div>
     
                 <div class="form__group" required>
                     <label for="form__statut">Statut</label>
-                    <select id="form__statut" name="statut">
+                    <select id="form__statut" name="statut" class="form__input">
                         <option value="to-read">À lire</option>
                         <option value="read">Déjà lu</option>
                     </select>
                 </div>
     
-                <button type="submit">
+                <button type="submit" id="form-submit">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                     Envoyer
                 </button>
@@ -90,33 +90,10 @@
     
             </thead>
     
-            <tbody>
+            <tbody id="book-container">
     
-                <tr>
-                    <td>Le château de Hurle</td>
-                    <td>Diana Wynne Jones</td>
-                    <td>432</td>
-                    <td>
-                        <button type="button" class="--read">À lire</button>
-                        <div class="delete">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                        </div>
-                    </td>
-                    
-                </tr>
     
-                <tr>
-                    <td>Intelligence Artificielles</td>
-                    <td>Fibretigre, Arnold Zephir, Héloïse Chochois</td>
-                    <td>192</td>
-                    <td>
-                        <button type="button" class="--to-read">À lire</button>
-                        <div class="delete">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                        </div>
-                    </td>
-                </tr>
-    
+
             </tbody>
     
         </table>
