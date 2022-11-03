@@ -16,6 +16,7 @@ function renderModal() {
 form.addEventListener("submit", addBookFromInput);
 
 let myLibrary = [new Book("Le château de Hurle", "Diana Wynne Jones", 432, true), new Book("Intelligence Artificielles", "Fibretigre, Arnold Zephir, Héloïse Chochois", 192, false)];
+
 renderBooks()
 
 function addBookFromInput(event) {
@@ -32,7 +33,7 @@ function getBookByForm() {
 }
 
 function addBookToLibrary(book) {
-    
+    myLibrary.push(book)
 };
 
 function renderBooks() {
@@ -45,7 +46,7 @@ function renderBooks() {
             <td>${book.pages}</td>
             <td>
                 <button type="button" class="${book.status ? "--read" : "--to-read"}">${book.status ? "Déjà lu" : "À lire"}</button>
-                <div class="delete">
+                <div onclick="deleteBook(${myLibrary.indexOf(book)})" class="delete">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                 </div>
             </td>
@@ -55,3 +56,7 @@ function renderBooks() {
     bookDisplay.innerHTML = bookDisplayHtml;
 }
 
+function deleteBook(index) {
+    myLibrary.splice(index, 1);
+    renderBooks()
+}
