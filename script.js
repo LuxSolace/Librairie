@@ -66,3 +66,12 @@ function changeButtonState(element) {
         element.classList = myLibrary[element.dataset.index].status ? "--read" : "--to-read";
         element.textContent = myLibrary[element.dataset.index].status ? "Déjà lu" : "À lire";
 }
+
+function toggleTheme() {
+    const root = document.documentElement;
+    if (root.classList == "light") {
+        root.classList = "dark"
+    } else {
+        root.classList = "light"
+    }
+}
