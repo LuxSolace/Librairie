@@ -28,7 +28,7 @@ body {
   position: relative;
 }
 
-.button-base, #modal form button, .add-button, table button, table tbody .delete, header .header__button button {
+.button-base, #modal form button, #modal #close-modal, .add-button, #modal form button, table button, table tbody .delete, header .header__button button {
   border: none;
   display: flex;
   align-items: center;
@@ -163,6 +163,17 @@ table button.--to-read {
   left: 50%;
   transform: translate(-50%, -100vh);
 }
+#modal #close-modal {
+  height: 35px;
+  width: 35px;
+  background: none;
+  border-radius: 50%;
+  position: absolute;
+  right: 40px;
+}
+#modal #close-modal svg {
+  stroke: #BB3434;
+}
 #modal h2 {
   color: #226D68;
   font-family: "FuturaLT", sans-serif;
@@ -222,4 +233,4 @@ table button.--to-read {
 
 #modal.visible {
   transform: translate(-50%, -50%);
-}/*# sourceMappingURL=style.css.map */
+}

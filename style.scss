@@ -217,6 +217,20 @@ table {
     left: 50%;
     transform: translate(-50%, -100vh);
 
+    #close-modal {
+        @extend .button-base;
+        height: 35px;
+        width: 35px;
+        background: none;
+        border-radius: 50%;
+        position: absolute;
+        right: 40px;
+
+        svg {
+            stroke: $color-danger;
+        }
+    }
+
     h2 {
         color: $color-secondary;
         font-family: $font-secondary;
