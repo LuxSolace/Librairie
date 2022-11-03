@@ -45,7 +45,7 @@ function renderBooks() {
             <td>${book.author}</td>
             <td>${book.pages}</td>
             <td>
-                <button type="button" class="${book.status ? "--read" : "--to-read"}">${book.status ? "Déjà lu" : "À lire"}</button>
+                <button type="button" class="${book.status ? "--read" : "--to-read"}" onclick="changeButtonState(this)" data-index="${myLibrary.indexOf(book)}">${book.status ? "Déjà lu" : "À lire"}</button>
                 <div onclick="deleteBook(${myLibrary.indexOf(book)})" class="delete">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                 </div>
@@ -59,4 +59,10 @@ function renderBooks() {
 function deleteBook(index) {
     myLibrary.splice(index, 1);
     renderBooks()
+}
+
+function changeButtonState(element) {
+        myLibrary[element.dataset.index].status = !myLibrary[element.dataset.index].status;
+        element.classList = myLibrary[element.dataset.index].status ? "--read" : "--to-read";
+        element.textContent = myLibrary[element.dataset.index].status ? "Déjà lu" : "À lire";
 }
