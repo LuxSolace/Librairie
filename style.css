@@ -99,6 +99,7 @@ main {
 table {
   text-align: left;
   border-collapse: collapse;
+  min-width: 990px;
 }
 table thead tr {
   border-bottom: var(--color-toned-primary) solid 1px;
