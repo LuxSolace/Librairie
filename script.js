@@ -2,11 +2,11 @@ const modal = document.getElementById("modal");
 const form = document.getElementById("form");
 const bookDisplay = document.getElementById("book-container")
 
-function Book(name, author, pages, status) {
+function Book(name, author, pages, isRead) {
     this.name = name,
     this.author = author,
     this.pages = pages,
-    this.status = status
+    this.isRead = isRead
 };
 
 function renderModal() {
@@ -16,7 +16,6 @@ function renderModal() {
 form.addEventListener("submit", addBookFromInput);
 
 let myLibrary = [new Book("Le château de Hurle", "Diana Wynne Jones", 432, true), new Book("Intelligence Artificielles", "Fibretigre, Arnold Zephir, Héloïse Chochois", 192, false)];
-
 renderBooks()
 
 function addBookFromInput(event) {
@@ -28,7 +27,16 @@ function addBookFromInput(event) {
 function getBookByForm() {
     const formInputValue = [];
     const formInput = [...document.getElementsByClassName("form__input")];
-    formInput.forEach(input => formInputValue.push(input.value));
+    formInput.forEach(input => {
+        if (input.value === "true") {
+            formInputValue.push(true)
+        } else if (input.value === "false") {
+            formInputValue.push(false)
+        } else {
+        formInputValue.push(input.value)
+        }
+    });
+    console.log(formInputValue)
     return formInputValue
 }
 
@@ -45,7 +53,7 @@ function renderBooks() {
             <td>${book.author}</td>
             <td>${book.pages}</td>
             <td>
-                <button type="button" class="${book.status ? "--read" : "--to-read"}" onclick="changeButtonState(this)" data-index="${myLibrary.indexOf(book)}">${book.status ? "Déjà lu" : "À lire"}</button>
+                <button type="button" class="${book.isRead ? "--read" : "--to-read"}" onclick="changeButtonState(this)" data-index="${myLibrary.indexOf(book)}">${book.isRead ? "Déjà lu" : "À lire"}</button>
                 <div onclick="deleteBook(${myLibrary.indexOf(book)})" class="delete">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                 </div>
@@ -62,9 +70,9 @@ function deleteBook(index) {
 }
 
 function changeButtonState(element) {
-        myLibrary[element.dataset.index].status = !myLibrary[element.dataset.index].status;
-        element.classList = myLibrary[element.dataset.index].status ? "--read" : "--to-read";
-        element.textContent = myLibrary[element.dataset.index].status ? "Déjà lu" : "À lire";
+        myLibrary[element.dataset.index].isRead = !myLibrary[element.dataset.index].isRead;
+        element.classList = myLibrary[element.dataset.index].isRead ? "--read" : "--to-read";
+        element.textContent = myLibrary[element.dataset.index].isRead ? "Déjà lu" : "À lire";
 }
 
 function toggleTheme() {
