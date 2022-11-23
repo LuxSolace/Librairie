@@ -2,12 +2,14 @@ const modal = document.getElementById("modal");
 const form = document.getElementById("form");
 const bookDisplay = document.getElementById("book-container")
 
-function Book(name, author, pages, isRead) {
-    this.name = name,
-    this.author = author,
-    this.pages = pages,
-    this.isRead = isRead
-};
+class Book {
+    constructor(name, author, pages, isRead) {
+        this.name = name;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead;
+    }
+}
 
 function renderModal() {
     modal.classList.toggle("visible")
